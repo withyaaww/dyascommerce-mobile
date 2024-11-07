@@ -15,6 +15,7 @@
 ---
 #                   Table of Contents
 - [TUGAS INDIVIDU 7](#tugas-individu-7)
+- [TUGAS INDIVIDU 8](#tugas-individu-8)
 
 
 
@@ -187,4 +188,101 @@ nambahin `ScaffoldMessenger` :
             );
         },
  )
+```
+***
+#                  TUGAS INDIVIDU 8
+
+## Apa kegunaan const di Flutter? Jelaskan apa keuntungan ketika menggunakan const pada kode Flutter. Kapan sebaiknya kita menggunakan const, dan kapan sebaiknya tidak digunakan?
+
+`const` digunakan untuk membuat objek yang tidak berubah (immutable), yang berarti bahwa objek ini akan dibuat sekali dan disimpan di memori tanpa perlu di-render ulang ketika aplikasi mengalami perubahan state.
+
+**Keuntungan:**
+- **Lebih cepat dan hemat memori**: Dengan menggunakan `const`, Flutter hanya membuat satu instance objek, meningkatkan performa aplikasi.
+- **Kode lebih aman**: Mengurangi kemungkinan perubahan data yang tidak disengaja pada widget yang seharusnya tetap.
+
+**Kapan menggunakan `const`:**
+- Ketika kita yakin bahwa elemen tersebut bersifat statis, seperti teks atau ikon yang tidak akan berubah.
+
+**Kapan tidak menggunakan `const`:**
+- Ketika elemen tergantung pada data atau state yang bisa berubah, seperti elemen UI yang dinamis.
+
+## Jelaskan dan bandingkan penggunaan Column dan Row pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!
+
+`Column` dan `Row` adalah widget dasar di Flutter untuk mengatur tata letak elemen secara vertikal (atas ke bawah) atau horizontal (kiri ke kanan).
+
+#### Contoh `Column`
+
+```dart
+Column(
+  mainAxisAlignment: MainAxisAlignment.center,
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Text('Name'),
+    Text('Price'),
+    Text('Deskripsi'),
+  ],
+);
+```
+#### Contoh Row
+```dart
+Row(
+  mainAxisAlignment: MainAxisAlignment.spaceAround,
+  crossAxisAlignment: CrossAxisAlignment.center,
+  children: [
+    Icon(Icons.home),
+    Icon(Icons.shopping_bag),
+    Icon(Icons.logout),
+  ],
+);
+```
+
+## Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!
+
+Pada halaman form untuk memasukkan data produk, elemen input yang digunakan adalah:
+
+- **TextFormField**: Mengumpulkan input teks seperti nama produk, harga, dan deskripsi produk.
+
+Elemen input lain yang tersedia di Flutter tetapi tidak digunakan dalam tugas ini meliputi:
+
+- **DropdownButtonFormField**: Untuk memilih satu opsi dari beberapa pilihan.
+- **Checkbox**: Untuk opsi ya/tidak atau pilihan multi.
+- **Switch**: Untuk toggle fitur aktif atau non-aktif.
+- **Slider**: Untuk memilih nilai dari rentang tertentu.
+- **DatePicker**: Untuk input tanggal.
+
+## Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?
+
+Untuk konsistensi tampilan, Flutter mendukung pengaturan tema menggunakan ThemeData. Dengan ini, warna, gaya teks, dan style lainnya bisa didefinisikan di satu tempat dan diterapkan di seluruh aplikasi.
+
+```dart
+MaterialApp(
+  theme: ThemeData(
+    primaryColor: Colors.blue,
+    textTheme: TextTheme(
+      bodyText1: TextStyle(fontSize: 16.0, color: Colors.black),
+    ),
+  ),
+  home: MyHomePage(),
+);
+```
+## Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?
+
+Navigasi di Flutter dapat dilakukan dengan Navigator dan Routes. Jika aplikasi memiliki banyak halaman, kita bisa menggunakan Navigator.push untuk berpindah halaman atau mendefinisikan rute (routes) di MaterialApp.
+
+contoh `Navigator.push `:
+```dart
+Navigator.push(
+  context,
+  MaterialPageRoute(builder: (context) => NewPage()),
+);
+```
+Contoh `MaterialApp`:
+```dart
+MaterialApp(
+  initialRoute: '/',
+  routes: {
+    '/': (context) => HomePage(),
+    '/productEntry': (context) => ProductEntryFormPage(),
+  },
+);
 ```
