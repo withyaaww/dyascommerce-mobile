@@ -17,7 +17,7 @@ class LeftDrawer extends StatelessWidget {
     child: const Column(
       children: [
         Text(
-          'Mental Health Tracker',
+          'DYAS FLOWERS',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 24,
@@ -27,7 +27,7 @@ class LeftDrawer extends StatelessWidget {
         ),
         Padding(padding: EdgeInsets.all(8)),
         Text(
-          "Ayo jaga kesehatan mentalmu setiap hari disini!",
+          "Ayo belii produk-produk terbaik dari Dyas Flowers!",
           //Tambahkan gaya teks dengan center alignment, font ukuran 15, warna putih, dan weight biasa
           textAlign: TextAlign.center,
           style: TextStyle(
