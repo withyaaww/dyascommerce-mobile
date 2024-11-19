@@ -295,8 +295,13 @@ MaterialApp(
 Model diperlukan untuk untuk struktur data yang jelas, kemudahan dalam membaca dan dipelihara, serta konversi data yang efisien.
 
 tidak membuat model untuk data JSON dapat menyebabkan berbagai error yang berpotensi mengganggu fungsi aplikasi dan memperlambat proses pengembangan.
+
 ---
 ### 2. Jelaskan fungsi dari library http yang diimplementasi 
+---
+Melakukan HTTP Request: Mengirim request (GET, POST, PUT, DELETE) ke server.
+Mengambil Data dari API: Mendapatkan respons dalam bentuk JSON atau format lain.
+
 ---
 
 ### 3. Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.
