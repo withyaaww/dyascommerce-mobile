@@ -16,6 +16,7 @@
 #                   Table of Contents
 - [TUGAS INDIVIDU 7](#tugas-individu-7)
 - [TUGAS INDIVIDU 8](#tugas-individu-8)
+- [TUGAS INDIVIDU 9](#tugas-individu-9)
 
 
 
@@ -286,3 +287,79 @@ MaterialApp(
   },
 );
 ```
+---
+#                  TUGAS INDIVIDU 9
+---
+### 1. Jelaskan mengapa kita perlu membuat model untuk melakukan pengambilan ataupun pengiriman data JSON? Apakah akan terjadi error jika kita tidak membuat model terlebih dahulu?
+---
+Model diperlukan untuk untuk struktur data yang jelas, kemudahan dalam membaca dan dipelihara, serta konversi data yang efisien.
+
+tidak membuat model untuk data JSON dapat menyebabkan berbagai error yang berpotensi mengganggu fungsi aplikasi dan memperlambat proses pengembangan.
+---
+### 2. Jelaskan fungsi dari library http yang diimplementasi 
+---
+
+### 3. Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.
+---
+Fungsi dari CookieRequest yaitu :
+- Memastikan bahwa informasi sensitif dikirimkan dengan benar kepada sesi pengguna yang sesuai
+-  Membantu dalam mengingat informasi sesi pengguna
+- Menyimpan preferensi pengguna, seperti bahasa atau tema yang dipilih
+-  Melacak aktivitas pengguna di situs web
+
+Instance `CookieRequest` perlu dibagikan ke semua komponen di aplikasi Flutter karena beberapa alasan penting yang berkaitan dengan pengelolaan cookies dan interaksi dengan server.
+
+---
+### 4. Jelaskan mekanisme pengiriman data mulai dari input hingga dapat ditampilkan pada Flutter
+
+1. **Input Data**: Pengguna memasukkan data melalui UI.
+2. **Persiapan Data**: Data dikonversi menjadi format JSON.
+3. **Pengiriman Data**: Menggunakan paket http untuk mengirim permintaan HTTP ke server.
+4. **Penanganan Respons**: Memproses respons dari server untuk memastikan pengiriman berhasil.
+5. **Menampilkan Data**: Memperbarui antarmuka pengguna dengan data yang diterima.
+---
+### 5.Jelaskan mekanisme autentikasi dari login, register, hingga logout. Mulai dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.
+---
+1. **Input Data**: Pengguna memasukkan data akun melalui UI.
+2. **Pengiriman Data**: Data dikirim ke server Django menggunakan permintaan HTTP.
+3. **Penanganan Respons**: Respons dari server diproses untuk menentukan keberhasilan autentikasi.
+4. **Menyimpan Token**: Token autentikasi disimpan untuk digunakan dalam permintaan selanjutnya.
+5. **Logout**: Token dihapus saat pengguna logout.
+6. **Menampilkan Menu**: Halaman utama ditampilkan berdasarkan status autentikasi pengguna.
+---
+## 6. Implementasi step by step
+---
+**Implementasi fitur registrasi akun pada proyek tugas Flutter**
+1. Membuat sebuah view baru di project django
+2. Membuat stateful page pada umumnya
+3. Membuat form yang berisi input username, password, dan konfirmasi password
+4. Membuat logic button regitrasi
+5. Jika registrasi berhasil maka pengguna akan diarahkan ke login page
+
+--
+**Pembuatan halaman login pada proyek tugas flutter**
+1. Membuat view baru di Project Django
+2. Membuat stateful page pada umumnya
+3. Membuat form yang berisi username dan password
+4. Membuat logic button login
+---
+**Integrasi sistem autentikasi Django dengan proyek tugas Flutter**
+1. Membuat view login, logout, dan registrasi
+2. Memanggil endpoints melalui request di Flutter
+3. Memproses output JSON
+---
+**Membuat halaman  yang berisi daftar semua item yang terdapat pada endpoint JSON di Django yang telah kamu deploy.**
+1. Mengecek konten dari localhost:8000/json
+2. Copy model dart dengan bantuan website Quicktype
+3. Membuat file baru bernama product_entry.dart untuk meletakan model yang telah dicopy sebelumnya
+---
+**Membuat halaman detail untuk setiap item yang terdapat pada halaman daftar Item.**
+1. Membuat page stateful pada umumnya
+2. Membuat function untuk melakukan fetching json
+3. Menggunakan Future Builder pada body dari Scaffold
+---
+**Melakukan filter pada halaman daftar item dengan hanya menampilkan item yang terasosiasi dengan pengguna yang login.**
+1. Membuat sebuah stateful page pada umumnya
+2. Menyatakan variabel-variabel yang menjadi atribut dari page detail (misalnya Uuid, price, description, dll)
+3. Melakukan handle card
+---
